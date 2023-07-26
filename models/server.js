@@ -26,7 +26,10 @@ class Server {
     routes() {
 
         this.app.get('/api',  (req, res) => {
-            res.send('Bienvenido a la Api')
+            res.status(403).json({
+                ok:true,
+                msg: 'get API'
+            })
           });
 
         }
