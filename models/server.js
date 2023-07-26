@@ -34,25 +34,31 @@ class Server {
           });
 
         this.app.put('/api',  (req, res) => {
-        res.json({
+        res.status(201).json({
             msg: 'put API'
             })
         });
 
 
         this.app.post('/api',  (req, res) => {
-            res.json({
+            res.status(300).json({
                 msg: 'post API'
                 })
             });
 
             
         this.app.delete('/api',  (req, res) => {
-            res.json({
+            res.status(404).json({
                 msg: 'delete API'
                 })
         });
-
+        
+        this.app.patch('/api',  (req, res) => {
+            res.status(500).json({
+                msg: 'delete API'
+                })
+        });
+        
                 
 
         }
