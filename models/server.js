@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 class Server {
 
@@ -18,6 +19,10 @@ class Server {
 
 
     middlewares() {
+
+        // CORS
+        this.app.use( cors() );
+
         //directorio publico
         this.app.use( express.static('public'));
 
@@ -52,7 +57,7 @@ class Server {
                 msg: 'delete API'
                 })
         });
-        
+
         this.app.patch('/api',  (req, res) => {
             res.status(500).json({
                 msg: 'delete API'
